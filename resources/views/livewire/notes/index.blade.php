@@ -30,7 +30,7 @@
                     <td>{{ $note->user_username }}</td>
                     <td>
                         <a href="{{ route('notes.edit',['note_id'=>$note->notes_id]) }}" class="btn btn-success">Detail</a>
-                        <button wire:click='#' class="btn btn-danger">Delete</button>
+                        <button wire:click='destroy({{ $note->notes_id }})' class="btn btn-danger">Delete</button>
                     </td>
                 </tr>
                 @endforeach
