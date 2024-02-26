@@ -10,6 +10,18 @@ use Livewire\Component;
 class Index extends Component
 {
 
+    public function destroy($note_id)
+    {
+        $note = Note::where('notes_id',$note_id)->first();
+
+        if($note) {
+
+            $note->delete();
+
+            return redirect()->route('notes.index');
+        }
+    }
+
     public function render()
     {
 
